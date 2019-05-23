@@ -3,15 +3,18 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@zeit/next-css": "^1.0.1",
+		"next": "^8.1.0",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
 		"react-scripts": "2.1.8"
 	},
 	"scripts": {
-		"build:css": "postcss src/styles/index.css -o src/index.css",
-		"watch:css": "postcss src/styles/index.css -o src/index.css -w",
-		"start": "npm run watch:css & react-scripts start",
-		"build": "npm run build:css && react-scripts build",
+		"dev": "next",
+		"build:css": "postcss styles/index.css -o index.css",
+		"watch:css": "postcss styles/index.css -o index.css -w",
+		"start": "next watch:css & react-scripts start",
+		"build": "next build:css && react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
